@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js">
     </script>
     <script src="bootstrap-4.0.0-dist\js\bootstrap.min.js" crossorigin="anonymous"></script>
-   
+    
 </head>
 
 <body>
@@ -25,7 +25,7 @@
                                     <div class="h3 fw-light">Hello, Who's this?</div>
                                     <?php show_messages() ?>
                                 </div>
-                                <form method="post" action="save_contact.php">
+                                <form class="needs-validation" method="post" action="save_contact.php" >
                                     <div class="form-group">
                                         <label for="name">Name</label>
                                         <input type="text" class="form-control" id="name" name="name"
@@ -34,8 +34,8 @@
 
                                     <div class="form-group">
                                         <label for="phone">Phone Number</label>
-                                        <input type="number" class="form-control" id="phone" name="phone"
-                                            placeholder="Phone Number" required>
+                                        <input type="text" class="form-control" id="phone" name="phone"  minlength="10" maxlength="14"
+                                          placeholder="Phone Number" required>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="col-sm-12 btn btn-dark text-center">Submit</button>
@@ -72,6 +72,7 @@
         }
         
     ?>
+   
 </body>
 
 </html>
