@@ -1,5 +1,4 @@
 <?php
-// Assuming you have a database connection established
 define("Root", "http://localhost/assignment/");
 define("PROJECT_ROOT", $_SERVER['DOCUMENT_ROOT'] . "/assignment/");
 define("server", "localhost");
@@ -8,22 +7,18 @@ define("password", "");
 define("db_name", "assignment");
 
 session_start();
-// Create connection
 $conn = mysqli_connect(server, username, password, db_name);
 
 mysqli_set_charset($conn, "utf8");
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-// Retrieve form data
 $name = $_POST['name'];
 
 $extractName=explode(" ",$name);
 
 $phone = $_POST['phone'];
 $createdDate = date('Y-m-d H:i:s');
-// Perform any necessary validation or sanitization of the data
 function insert_query($sql)
 {
     global $conn;
